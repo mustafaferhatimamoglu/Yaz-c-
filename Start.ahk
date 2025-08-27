@@ -14,9 +14,13 @@ F9:: {
     for line in StrSplit(text, "`n", "`r") {
         ; Metni özel karakter çevrimi olmadan yazmak için Text modu:
         Send "{Text}" line
-        Send "{CRTL+J}"
+        ;Send "{CRTL+J}"
+        ;Send, ^j
+        ;^j::Send "^j"
+        Send("^j")
         Sleep 50   ; satırlar arası çok kısa bekleme
     }
+    Send{Enter}
 }
 
 ; F8 -> Hızlı yaz (yapıştırır gibi, tek seferde)
