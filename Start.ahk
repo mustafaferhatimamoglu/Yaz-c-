@@ -18,31 +18,11 @@ F9:: {
         ;Send, ^j
         ;^j::Send "^j"
         Send("^j")
-        Sleep 50   ; satırlar arası çok kısa bekleme
+        Sleep Random(15, 200)   ; satırlar arası rastgele bekleme (15-200ms)
     }
     ;Send(Enter)
 }
 
-; F8 -> Hızlı yaz (yapıştırır gibi, tek seferde)
-; Not: Bu modda gecikme ayarı önemsenmez; en hızlısıdır.
-F8:: {
-    try text := FileRead(txtPath, "UTF-8")
-    catch {
-        MsgBox "Dosya okunamadı: " txtPath
-        return
-    }
-    SendText text
-}
-; F7 -> Test 
-; Test Dosyasını yazar 
-F7:: {
-    try text := FileRead("\test.txt", "UTF-8")
-    catch {
-        MsgBox "Dosya okunamadı: " "\test.txt"
-        return
-    }
-    SendText text
-}
 
 ; Ctrl+Esc -> Scripti kapat
 ^Esc:: ExitApp
