@@ -1,0 +1,8 @@
+SELECT TOP (1000) *
+  FROM [WFA_Binance].[dbo].[MultiIntervalIndicatorStates]
+  order by openTime desc
+
+logları kontrol et ve temizle bir sonraki çalıştırmada neyin yanlış gittiğini net biçimde görebilelim 
+SOLID prensiplerine uygun kod yazıyoruz
+dotnet build tamamlanmadan bana kod teslim etmiyorsun
+demo data kullanmıyoruz
